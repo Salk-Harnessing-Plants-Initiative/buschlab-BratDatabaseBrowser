@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
+<?import org.controlsfx.control.ToggleSwitch?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.oeaw.gmi.bratdb.gui.fx.controllers.ExpAccViewController">
+    <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+        <Menu fx:id="menuFile" text="_File" />
+        <Menu fx:id="menuEdit" text="_Edit" />
+        <Menu fx:id="menuHelp" text="_Help" />
+    </MenuBar>
+      <StackPane fx:id="mainStack" VBox.vgrow="ALWAYS">
+          <MaskerPane fx:id="rootMasker" prefHeight="552.0" prefWidth="900.0" visible="false" />
+      <SplitPane fx:id="hunterSplit" dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+         <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="549.0" prefWidth="221.0">
+           <Label alignment="CENTER" minWidth="60.0" style="&#10;" text="Gene Hunter Files" textAlignment="CENTER" textFill="#9f9f9f">
+              <font>
+                 <Font size="14.0" />
+              </font>
+           </Label>
+           <ListView fx:id="geneHunterList" prefHeight="541.0" prefWidth="224.0" />
+         </SplitPane>
+          <VBox>
+              <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+              </padding>
+              <Label alignment="CENTER" text="Original Files contained" textAlignment="CENTER"/>
+              <ListView fx:id="hunterOrigList" prefHeight="200.0" prefWidth="200.0">
+                 <padding>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                 </padding>
+              </ListView>
+              <Label text="Filter Options"/>
+              <TableView fx:id="lookUpTableView" prefHeight="341.0" prefWidth="410.0" VBox.vgrow="ALWAYS"/>
+          </VBox>
+      </SplitPane>
+          <SplitPane fx:id="expSplit" dividerPositions="0.3, 0.5" focusTraversable="true">
+              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="549.0" prefWidth="221.0">
+                  <Label alignment="CENTER" minWidth="60.0" style="&#10;" text="Experiments" textAlignment="CENTER" textFill="#9f9f9f">
+                    <font>
+                      <Font size="14.0" />
+                    </font>
+                  </Label>
+                  <ListView fx:id="expList" prefHeight="541.0" prefWidth="224.0" />
+              </SplitPane>
+              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="544.0" prefWidth="246.0">
+                <Label fx:id="accLabel" alignment="CENTER" text="Accessions" textAlignment="CENTER" textFill="#9f9f9f">
+                   <font>
+                      <Font size="14.0" />
+                   </font>
+                </Label>
+                <ListView fx:id="accIdList" prefHeight="541.0" prefWidth="219.0" />
+              </SplitPane>
+              <SplitPane fx:id="detailSplitPane" maxHeight="1.79E308" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" />
+          </SplitPane>
+      </StackPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="50.0" prefWidth="761.0" spacing="5.0" VBox.vgrow="NEVER">
+        <ButtonBar maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="615.0" HBox.hgrow="ALWAYS">
+          <buttons>
+              <JFXButton fx:id="resetButton" text="_reload Exp List" />
+              <JFXButton fx:id="addExp" minWidth="58.0" prefHeight="26.0" text="_add single Exp" />
+              <JFXButton fx:id="lookUpButton" prefHeight="22.0" prefWidth="94.0" text="_Look up Accession" />
+              <JFXButton fx:id="consoleButton" text="_Show / Hide Console" />
+            <ToggleSwitch fx:id="perspectiveSwitch" alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="44.0" text="switch view">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </ToggleSwitch>
+          </buttons>
+        </ButtonBar>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+      <GridPane fx:id="dbGridInfo" maxWidth="1.79E308" prefHeight="36.0" prefWidth="761.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="60.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="20.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="-Infinity" prefHeight="15.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="-Infinity" prefHeight="15.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+</VBox>

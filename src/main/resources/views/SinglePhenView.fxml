@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="230.0" prefWidth="507.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.oeaw.gmi.bratdb.gui.fx.controllers.SinglePhenViewController">
+  <VBox prefHeight="205.0" prefWidth="507.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <TableView fx:id="singlePhenList" maxHeight="1.7976931348623157E308" prefHeight="291.0" prefWidth="500.0" VBox.vgrow="ALWAYS" />
+    <ButtonBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="55.0" prefWidth="507.0">
+      <buttons>
+          <ChoiceBox fx:id="selectProp" prefWidth="150.0" />
+          <Button fx:id="csvExpButton" alignment="CENTER" mnemonicParsing="false" text="Export to csv" />
+          <Button fx:id="rButton" mnemonicParsing="false" text="View R-Code" />
+      </buttons>
+       <padding>
+          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+       </padding>
+    </ButtonBar>
+  </VBox>
+</AnchorPane>

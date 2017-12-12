@@ -1,0 +1,238 @@
+package ormliteDB;
+import com.j256.ormlite.dao.ForeignCollection;
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
+
+import javax.persistence.Column;
+
+@DatabaseTable(tableName = "acc_phenotypes_avg")
+public class Acc_PhenTable{
+
+	public static final String SOURCE_EXP_NAME = "Source_Experiment";
+	public static final String SOURCE_ACC_NAME = "Source_Accession";
+	public static final String SOURCE_TIMESTEP = "Timestep";
+	
+	Acc_PhenTable() {
+	}
+		
+	// Id is has to be unique!!!
+	@DatabaseField(generatedId = true) 
+	private Integer id;
+		
+	@DatabaseField(columnName = SOURCE_EXP_NAME,foreign = true) //foreignAutoCreate ?!
+	private ExpTable sourceExpId;
+	
+	@ForeignCollectionField
+	private ForeignCollection<Single_PhenTable> singleValues;
+	
+	@Column(name = SOURCE_ACC_NAME)
+	public String accId;
+		
+	// annotating table columns
+	@Column(name = SOURCE_TIMESTEP)
+	public String day;
+	
+	@Column(name = "mean_RootLength")
+	public double mean_rootlength;
+		
+	@Column(name = "mean_dirEquivalent")
+	public double mean_direquivalent;
+	
+	@Column(name = "mean_stdDevXY")
+	public double mean_stddevxy;	
+	
+	@Column(name = "mean_avgRootWidth")
+	public double mean_avgrootwidth;
+	
+	@Column(name = "mean_rootWidth20")
+	public double mean_rootwidth20;
+	
+	@Column(name = "mean_rootWidth40")
+	public double mean_rootwidth40;
+	
+	@Column(name = "mean_rootWidth60")
+	public double mean_rootwidth60;
+	
+	@Column(name = "mean_rootWidth80")
+	public double mean_rootwidth80;
+	
+	@Column(name = "mean_rootWidth100")
+	public double mean_rootwidth100;
+	
+	@Column(name = "mean_gravitropicDir")
+	public double mean_gravitropicdir;
+	
+	@Column(name = "mean_gravitropicScore")
+	public double mean_gravitropicscore;
+	
+	@Column(name = "mean_TotLen/EucLen")
+	public double mean_totlen_euclen;
+	
+	@Column(name = "mean_GR/TL")
+	public double mean_gr_tl;
+	
+	@Column(name = "mean_SDX/SDYperPix")
+	public double mean_sdx_sdyperpix;
+	
+	// medians: 
+	@Column(name = "median_rootLength")
+	public double median_rootlength;
+	
+	@Column(name = "median_dirEquivalent")
+	public double median_direquivalent;
+	
+	@Column(name = "median_stdDevXY")
+	public double median_stddevxy;
+	
+	@Column(name = "median_avgRootWidth")
+	public double median_avgrootwidth;
+	
+	@Column(name = "median_rootWidth20")
+	public double median_rootwidth20;
+	
+	@Column(name = "median_rootWidth40")
+	public double median_rootwidth40;
+	
+	@Column(name = "median_rootWidth60")
+	public double median_rootwidth60;
+	
+	@Column(name = "median_rootWidth80")
+	public double median_rootwidth80;
+	
+	@Column(name = "median_rootWidth100")
+	public double median_rootwidth100;
+	
+	@Column(name = "median_gravitropicDir")
+	public double median_gravitropicdir;
+	
+	@Column(name = "median_gravitropicScore")
+	public double median_gravitropicscore;
+	
+	@Column(name = "median_TotLen/EucLen")
+	public double median_totlen_euclen;
+	
+	@Column(name = "median_GR/TL")
+	public double median_gr_tl;
+	
+	@Column(name = "median_SDX/SDYperPix")
+	public double median_sdx_sdyperpix;
+	
+	// nIndivs: 
+	@Column(name = "nIndiv_rootLength")
+	public double nindiv_rootlength;
+	
+	@Column(name = "nIndiv_dirEquivalent")
+	public double nindiv_direquivalent;
+	
+	@Column(name = "nIndiv_stdDevXY")
+	public double nindiv_stddevxy;
+	
+	@Column(name = "nIndiv_avgRootWidth")
+	public double nindiv_avgrootwidth;
+	
+	@Column(name = "nIndiv_rootWidth20")
+	public double nindiv_rootwidth20;
+	
+	@Column(name = "nIndiv_rootWidth40")
+	public double nindiv_rootwidth40;
+	
+	@Column(name = "nIndiv_rootWidth60")
+	public double nindiv_rootwidth60;
+	
+	@Column(name = "nIndiv_rootWidth80")
+	public double nindiv_rootwidth80;
+	
+	@Column(name = "nIndiv_rootWidth100")
+	public double nindiv_rootwidth100;
+	
+	@Column(name = "nIndiv_gravitropicDir")
+	public double nindiv_gravitropicdir;
+	
+	@Column(name = "nIndiv_gravitropicScore")
+	public double nindiv_gravitropicscore;
+	
+	@Column(name = "nIndiv_TotLen/EucLen")
+	public double nindiv_totlen_euclen;
+	
+	@Column(name = "nIndiv_GR/TL")
+	public double nindiv_gr_tl;
+	
+	@Column(name = "nIndiv_SDX/SDYperPix")
+	public double nindiv_sdx_sdyperpix;
+	
+	// stdDevs: 
+	@Column(name = "stdDev_rootLength")
+	public double stddev_rootlength;
+	
+	@Column(name = "stdDev_dirEquivalent")
+	public double stddev_direquivalent;
+	
+	@Column(name = "stdDev_stdDevXY")
+	public double stddev_stddevxy;
+	
+	@Column(name = "stdDev_avgRootWidth")
+	public double stddev_avgrootwidth;
+	
+	@Column(name = "stdDev_rootWidth20")
+	public double stddev_rootwidth20;
+	
+	@Column(name = "stdDev_rootWidth40")
+	public double stddev_rootwidth40;
+	
+	@Column(name = "stdDev_rootWidth60")
+	public double stddev_rootwidth60;
+	
+	@Column(name = "stdDev_rootWidth80")
+	public double stddev_rootwidth80;
+	
+	@Column(name = "stdDev_rootWidth100")
+	public double stddev_rootwidth100;
+	
+	@Column(name = "stdDev_gravitropicDir")
+	public double stddev_gravitropicdir;
+	
+	@Column(name = "stdDev_gravitropicScore")
+	public double stddev_gravitropicscore;
+	
+	@Column(name = "stdDev_TotLen/EucLen")
+	public double stddev_totlen_euclen;
+	
+	@Column(name = "stdDev_GR/TL")
+	public double stddev_gr_tl;
+	
+	@Column(name = "stdDev_SDX/SDYperPix")
+	public double stddev_sdx_sdyperpix;
+	
+	public Integer getId() {
+		return this.id;
+	}
+	
+	public void setAcc(String acc) {
+		this.accId = acc;
+	}
+	
+	public String getAcc() {
+		return accId;
+	}
+	
+	public void setExpTable(ExpTable exp) {
+		this.sourceExpId = exp;
+	}
+	
+	public ExpTable getExpTable() {
+		return sourceExpId;
+	}
+	
+	public String getTimestep() {
+		return day;
+	}
+	
+	public ForeignCollection<Single_PhenTable> getSingleValues() {
+		return singleValues;
+	}
+
+	OIDA!!!
+
+////add after here
+}
